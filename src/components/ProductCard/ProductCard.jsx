@@ -1,5 +1,5 @@
 import React from "react";
-import { FaHeart } from "react-icons/fa";
+import { Link } from "react-router-dom";
 
 const ProductCard = ({ product }) => {
   return (
@@ -13,16 +13,11 @@ const ProductCard = ({ product }) => {
 
       <p>${product.price}</p>
 
-      <span>{product.category}</span>
-
-      <br />
-      <br />
-
-      <button>Add To Cart</button>
-
-      <button>
-        <FaHeart />
-      </button>
+      <Link to={`/product/${product.id}`}>
+        <button>
+          View Details
+        </button>
+      </Link>
     </div>
   );
 };
