@@ -1,15 +1,32 @@
-import { useSelector } from "react-redux";
+import { useEffect } from "react";
+import {
+  useDispatch,
+  useSelector,
+} from "react-redux";
 
 import ProductCard from "../components/ProductCard/ProductCard";
-
 import Filters from "../components/Filters/Filters";
-import RecentlyViewed from"../components/RecentlyViewed";
+import RecentlyViewed from "../components/RecentlyViewed";
+
+import { setProducts } from "../features/products/productsSlice";
 
 function Catalog() {
+  const dispatch = useDispatch();
+
   const products = useSelector(
-    (state) =>
-      state.products.filteredProducts
+    (state) => state.products.filteredProducts
   );
+
+  useEffect(() => {
+    fetch("https://fakestoreapi.com/products")
+      .then((res) => res.json())
+      .then((data) => {
+        dispatch(setProducts(data));
+      })
+      .catch((error) =>
+        console.log(error)
+      );
+  }, [dispatch]);
 
   return (
     <div>
@@ -18,6 +35,8 @@ function Catalog() {
       </h1>
 
       <Filters />
+
+      <RecentlyViewed />
 
       <div className="product-grid">
         {products.map((product) => (

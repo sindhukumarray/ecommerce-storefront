@@ -17,9 +17,7 @@ function Filters() {
         placeholder="Search Product..."
         onChange={(e) =>
           dispatch(
-            searchProducts(
-              e.target.value
-            )
+            searchProducts(e.target.value)
           )
         }
       />
@@ -27,9 +25,7 @@ function Filters() {
       <button
         onClick={() =>
           dispatch(
-            filterByCategory(
-              "Electronics"
-            )
+            filterByCategory("electronics")
           )
         }
       >
@@ -40,19 +36,29 @@ function Filters() {
         onClick={() =>
           dispatch(
             filterByCategory(
-              "Fashion"
+              "men's clothing"
             )
           )
         }
       >
-        Fashion
+        Men's Clothing
       </button>
 
       <button
         onClick={() =>
           dispatch(
-            filterByPrice(100)
+            filterByCategory(
+              "women's clothing"
+            )
           )
+        }
+      >
+        Women's Clothing
+      </button>
+
+      <button
+        onClick={() =>
+          dispatch(filterByPrice(100))
         }
       >
         Under $100

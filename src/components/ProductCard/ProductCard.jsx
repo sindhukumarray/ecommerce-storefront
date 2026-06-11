@@ -5,10 +5,7 @@ import { FaHeart } from "react-icons/fa";
 import { useDispatch } from "react-redux";
 
 import { addToCart } from "../../features/cart/cartSlice";
-
-import {
-  addToWishlist,
-} from "../../features/wishlist/wishlistSlice";
+import { addToWishlist } from "../../features/wishlist/wishlistSlice";
 
 function ProductCard({ product }) {
   const dispatch = useDispatch();
@@ -17,10 +14,10 @@ function ProductCard({ product }) {
     <div className="product-card">
       <img
         src={product.image}
-        alt={product.name}
+        alt={product.title}
       />
 
-      <h3>{product.name}</h3>
+      <h3>{product.title}</h3>
 
       <p>${product.price}</p>
 
@@ -52,6 +49,4 @@ function ProductCard({ product }) {
   );
 }
 
-export default React.memo(
-  ProductCard
-);
+export default React.memo(ProductCard);
