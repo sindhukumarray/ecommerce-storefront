@@ -30,11 +30,12 @@ return (
 
     <div className="hero">
       <h1>Welcome to Our Store</h1>
-      <p>Discover Amazing Products</p>
+      <p>Discover Premium Products
+    at Amazing Products</p>
     </div>
 
     <h1 className="catalog-title">
-      Product Catalog
+       Shop Now
     </h1>
 
     <Filters />
