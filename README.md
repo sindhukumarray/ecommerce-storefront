@@ -1,70 +1,127 @@
-# Getting Started with Create React App
+# 🛒 E-Commerce Storefront
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+A modern E-Commerce Storefront built using React, Redux Toolkit and FakeStore API.
 
-## Available Scripts
+---
 
-In the project directory, you can run:
+## 🚀 Features
 
-### `npm start`
+- Product Catalog
+- Product Search
+- Category Filters
+- Price Filters
+- Product Details
+- Shopping Cart
+- Wishlist
+- Recently Viewed Products
+- Checkout Page
+- Order Summary
+- Redux Toolkit State Management
+- React.memo Optimization
+- useMemo Optimization
+- React.lazy & Suspense
+- Responsive UI
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+---
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## 🛠️ Technologies Used
 
-### `npm test`
+- React.js
+- Redux Toolkit
+- React Router DOM
+- FakeStore API
+- CSS3
+- JavaScript (ES6)
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+---
 
-### `npm run build`
+## 📂 Project Structure
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+src/
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+├── components/
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+│ ├── Navbar/
 
-### `npm run eject`
+│ ├── Footer/
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+│ ├── Filters/
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+│ ├── Loader/
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+│ ├── ProductCard/
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+│ └── RecentlyViewed/
 
-## Learn More
+├── features/
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+│ ├── cart/
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+│ ├── products/
 
-### Code Splitting
+│ ├── wishlist/
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+│ └── recentlyViewed/
 
-### Analyzing the Bundle Size
+├── pages/
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+│ ├── Catalog.jsx
 
-### Making a Progressive Web App
+│ ├── ProductDetail.jsx
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+│ ├── Cart.jsx
 
-### Advanced Configuration
+│ ├── Wishlist.jsx
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+│ └── Checkout.jsx
 
-### Deployment
+├── styles/
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+│ └── globals.css
 
-### `npm run build` fails to minify
+├── App.jsx
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+└── index.js
+
+---
+
+## 🔗 API Used
+
+Fake Store API
+
+https://fakestoreapi.com/products
+
+---
+
+## ▶️ Run Project
+
+Install Dependencies
+
+npm install
+
+Start Development Server
+
+npm start
+
+Build Project
+
+npm run build
+
+---
+
+## 👨‍💻 Developer
+
+Sindhu Kumar Ray
+
+MERN Stack Developer Intern
+
+---
+
+## 📌 Future Enhancements
+
+- User Authentication
+- Backend Integration
+- Payment Gateway
+- Order History
+- Admin Dashboard
+- Product Reviews
