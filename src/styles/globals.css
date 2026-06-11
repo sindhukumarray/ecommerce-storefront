@@ -644,3 +644,44 @@ h2 {
   background: white;
   color: black;
 }
+
+.theme-btn {
+  background: #2563eb;
+
+  color: white;
+
+  border: none;
+
+  padding: 8px 12px;
+
+  border-radius: 8px;
+
+  cursor: pointer;
+
+  margin-left: 15px;
+}
+
+.theme-btn:hover {
+  background: #1d4ed8;
+}
+
+.dark-theme {
+  background: #0f172a;
+  color: white;
+}
+
+.dark-theme .navbar {
+  background: #020617;
+}
+
+.dark-theme .product-card {
+  background: #1e293b;
+  color: white;
+}
+
+.dark-theme .filters input,
+.dark-theme .filters select {
+  background: #1e293b;
+  color: white;
+  border: 1px solid #475569;
+}

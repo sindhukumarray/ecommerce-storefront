@@ -1,3 +1,4 @@
+import { useState } from "react";
 import { Link } from "react-router-dom";
 import { useSelector } from "react-redux";
 
@@ -9,6 +10,17 @@ function Navbar() {
   const wishlistItems = useSelector(
     (state) => state.wishlist.items
   );
+
+  const [darkMode, setDarkMode] =
+  useState(false);
+
+  const toggleTheme = () => {
+  setDarkMode(!darkMode);
+
+    document.body.classList.toggle(
+      "dark-theme"
+    );
+  };
 
   return (
     <nav className="navbar">
@@ -26,6 +38,16 @@ function Navbar() {
         <Link to="/wishlist">
           Wishlist ({wishlistItems.length})
         </Link>
+
+        <button
+          className="theme-btn"
+          onClick={toggleTheme}
+        >
+          {darkMode
+            ? "☀️"
+            : "🌙"}
+        </button>
+        
       </div>
     </nav>
   );
