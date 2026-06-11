@@ -3,6 +3,8 @@ import {
   useDispatch,
 } from "react-redux";
 
+import { Link } from "react-router-dom";
+
 import {
   removeFromWishlist,
 } from "../features/wishlist/wishlistSlice";
@@ -15,38 +17,54 @@ function Wishlist() {
   );
 
   return (
-    <div style={{ padding: "20px" }}>
-      <h1>Wishlist</h1>
+    <div className="wishlist-container">
+      <h1>❤️ My Wishlist</h1>
 
       {items.length === 0 ? (
-        <p>No Items Added</p>
-      ) : (
-        items.map((item) => (
-          <div
-            key={item.id}
-            style={{
-              border: "1px solid #ddd",
-              padding: "10px",
-              marginBottom: "10px",
-            }}
-          >
-            <h3>{item.name}</h3>
+        <div className="empty-wishlist">
+          <h2>
+            No Items In Wishlist
+          </h2>
 
-            <p>${item.price}</p>
-
-            <button
-              onClick={() =>
-                dispatch(
-                  removeFromWishlist(
-                    item.id
-                  )
-                )
-              }
-            >
-              Remove
+          <Link to="/">
+            <button>
+              Continue Shopping
             </button>
-          </div>
-        ))
+          </Link>
+        </div>
+      ) : (
+        <div className="wishlist-grid">
+          {items.map((item) => (
+            <div
+              key={item.id}
+              className="wishlist-card"
+            >
+              <img
+                src={item.image}
+                alt={item.title}
+              />
+
+              <h3>{item.title}</h3>
+
+              <p>
+                ${item.price}
+              </p>
+
+              <button
+                className="remove-btn"
+                onClick={() =>
+                  dispatch(
+                    removeFromWishlist(
+                      item.id
+                    )
+                  )
+                }
+              >
+                Remove
+              </button>
+            </div>
+          ))}
+        </div>
       )}
     </div>
   );
