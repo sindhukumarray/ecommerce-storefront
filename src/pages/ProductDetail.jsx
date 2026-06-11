@@ -1,8 +1,14 @@
 import { useParams } from "react-router-dom";
-import { useSelector } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
+import { useEffect } from "react";
+
+import { addRecentlyViewed } from "../features/recentlyViewed/recentlyViewedSlice";
+
 
 function ProductDetail() {
   const { id } = useParams();
+  
+  const dispatch = useDispatch();
 
   const product = useSelector((state) =>
     state.products.products.find(
@@ -10,23 +16,22 @@ function ProductDetail() {
     )
   );
 
+   useEffect(() => {
+    if (product) {
+      dispatch(addRecentlyViewed(product));
+    }
+  }, [product, dispatch]);
+
   if (!product) {
     return <h2>Product Not Found</h2>;
   }
 
   return (
-    <div style={{ padding: "20px" }}>
-      <img
-        src={product.image}
-        alt={product.name}
-        width="300"
-      />
-
+    
+    <div>
       <h1>{product.name}</h1>
 
-      <h2>${product.price}</h2>
-
-      <p>Category: {product.category}</p>
+      <p>${product.price}</p>
     </div>
   );
 }

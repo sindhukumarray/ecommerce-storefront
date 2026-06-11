@@ -3,6 +3,7 @@ import { useSelector } from "react-redux";
 import ProductCard from "../components/ProductCard/ProductCard";
 
 import Filters from "../components/Filters/Filters";
+import RecentlyViewed from"../components/RecentlyViewed";
 
 function Catalog() {
   const products = useSelector(
