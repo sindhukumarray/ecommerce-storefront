@@ -2,7 +2,7 @@ import { FaFacebookF } from "react-icons/fa";
 import { FaInstagram } from "react-icons/fa";
 import { FaLinkedinIn } from "react-icons/fa";
 import { FaGithub } from "react-icons/fa";
-
+import { Link } from "react-router-dom";
 function Footer() {
   return (
     <footer className="footer">
@@ -23,11 +23,32 @@ function Footer() {
           <h3>Quick Links</h3>
 
           <ul>
-            <li>Home</li>
-            <li>Cart</li>
-            <li>Wishlist</li>
-            <li>Checkout</li>
-          </ul>
+
+        <li>
+          <Link to="/">
+           Home
+          </Link>
+        </li>
+
+       <li>
+        <Link to="/cart">
+         Cart
+       </Link>
+      </li>
+
+      <li>
+       <Link to="/wishlist">
+        Wishlist
+       </Link>
+     </li>
+
+     <li>
+       <Link to="/checkout">
+       Checkout
+      </Link>
+     </li>
+
+    </ul>
         </div>
 
         <div className="footer-section">
