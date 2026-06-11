@@ -613,11 +613,34 @@ h2 {
 }
 
 .filters select {
-  padding: 10px;
+  padding: 10px 15px;
 
-  border-radius: 8px;
+  background: #2563eb;
+  min-width: 170px;
+  color: white;
 
-  border: 1px solid #ddd;
+  border: none;
+
+  border-radius: 10px;
 
   cursor: pointer;
+
+  font-size: 14px;
+
+  font-weight: 500;
+
+  transition: 0.3s;
+}
+
+.filters select:hover {
+  background: #1d4ed8;
+}
+
+.filters select:focus {
+  outline: none;
+}
+
+.filters select option {
+  background: white;
+  color: black;
 }
