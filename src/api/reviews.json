@@ -1,0 +1,20 @@
+[
+  {
+    "id": 1,
+    "user": "sindhu",
+    "rating": 5,
+    "comment": "Excellent Product"
+  },
+  {
+    "id": 2,
+    "user": "sonu",
+    "rating": 4,
+    "comment": "Good Quality"
+  },
+  {
+    "id": 3,
+    "user": "rajesh",
+    "rating": 5,
+    "comment": "Worth Buying"
+  }
+]
