@@ -64,6 +64,20 @@ function ProductDetail() {
         ${product.price}
       </p>
 
+<p>
+  <strong>
+    Rating:
+  </strong>{" "}
+  ⭐ {product.rating?.rate}/5
+</p>
+
+<p>
+  <strong>
+    Reviews:
+  </strong>{" "}
+  {product.rating?.count}
+</p>
+
       <p>
         {product.description}
       </p>

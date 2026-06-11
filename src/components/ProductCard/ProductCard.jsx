@@ -39,6 +39,11 @@ function ProductCard({ product }) {
 
       <p>${product.price}</p>
 
+      <p className="product-rating">
+      ⭐ {product.rating?.rate}
+     ({product.rating?.count} Reviews)
+      </p>
+
       <button
         onClick={handleAddToCart}
       >

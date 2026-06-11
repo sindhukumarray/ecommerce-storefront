@@ -603,3 +603,11 @@ h2 {
 
   font-weight: 600;
 }
+
+.product-rating {
+  color: #f59e0b;
+
+  font-weight: 600;
+
+  margin: 10px 0;
+}
