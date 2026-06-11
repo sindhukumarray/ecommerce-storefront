@@ -1,0 +1,30 @@
+[
+  {
+    "id": 1,
+    "name": "iPhone 15",
+    "price": 999,
+    "category": "Electronics",
+    "image": "https://via.placeholder.com/250"
+  },
+  {
+    "id": 2,
+    "name": "Gaming Mouse",
+    "price": 59,
+    "category": "Electronics",
+    "image": "https://via.placeholder.com/250"
+  },
+  {
+    "id": 3,
+    "name": "Nike Shoes",
+    "price": 120,
+    "category": "Fashion",
+    "image": "https://via.placeholder.com/250"
+  },
+  {
+    "id": 4,
+    "name": "Laptop",
+    "price": 850,
+    "category": "Electronics",
+    "image": "https://via.placeholder.com/250"
+  }
+]

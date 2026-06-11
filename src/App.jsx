@@ -1,7 +1,9 @@
+import Catalog from "./pages/Catalog";
+
 function App() {
   return (
     <div>
-      <h1>Redux Store Connected ✅</h1>
+      <Catalog />
     </div>
   );
 }
