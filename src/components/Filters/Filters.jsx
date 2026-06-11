@@ -5,6 +5,10 @@ import {
   filterByCategory,
   filterByPrice,
   resetFilters,
+  sortLowToHigh,
+  sortHighToLow,
+  sortAToZ,
+  sortZToA,
 } from "../../features/products/productsSlice";
 
 function Filters() {
@@ -17,7 +21,9 @@ function Filters() {
         placeholder="Search Product..."
         onChange={(e) =>
           dispatch(
-            searchProducts(e.target.value)
+            searchProducts(
+              e.target.value
+            )
           )
         }
       />
@@ -25,7 +31,9 @@ function Filters() {
       <button
         onClick={() =>
           dispatch(
-            filterByCategory("electronics")
+            filterByCategory(
+              "electronics"
+            )
           )
         }
       >
@@ -58,15 +66,80 @@ function Filters() {
 
       <button
         onClick={() =>
-          dispatch(filterByPrice(100))
+          dispatch(
+            filterByPrice(100)
+          )
         }
       >
         Under $100
       </button>
 
+      {/* Sorting Dropdown */}
+
+      <select
+        onChange={(e) => {
+          const value =
+            e.target.value;
+
+          if (
+            value === "low"
+          ) {
+            dispatch(
+              sortLowToHigh()
+            );
+          }
+
+          if (
+            value === "high"
+          ) {
+            dispatch(
+              sortHighToLow()
+            );
+          }
+
+          if (
+            value === "az"
+          ) {
+            dispatch(
+              sortAToZ()
+            );
+          }
+
+          if (
+            value === "za"
+          ) {
+            dispatch(
+              sortZToA()
+            );
+          }
+        }}
+      >
+        <option value="">
+          Sort By
+        </option>
+
+        <option value="low">
+          Price Low → High
+        </option>
+
+        <option value="high">
+          Price High → Low
+        </option>
+
+        <option value="az">
+          A → Z
+        </option>
+
+        <option value="za">
+          Z → A
+        </option>
+      </select>
+
       <button
         onClick={() =>
-          dispatch(resetFilters())
+          dispatch(
+            resetFilters()
+          )
         }
       >
         Reset
