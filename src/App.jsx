@@ -9,6 +9,7 @@ import ProductDetail from "./pages/ProductDetail";
 import Cart from "./pages/Cart";
 import Wishlist from "./pages/Wishlist";
 import Footer from "./components/Footer/Footer";
+import NotFound from "./pages/NotFound";
 
 const Checkout = lazy(() =>
   import("./pages/Checkout")
@@ -50,6 +51,11 @@ function App() {
           <Route
             path="/checkout"
             element={<Checkout />}
+          />
+
+          <Route
+           path="*"
+           element={<NotFound />}
           />
         </Routes>
       </Suspense>
