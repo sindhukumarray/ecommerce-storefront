@@ -50,9 +50,12 @@ function Catalog() {
             unbeatable prices.
           </p>
 
-          <button className="hero-btn">
-            Shop Now →
-          </button>
+          <button
+             className="hero-btn"onClick={() => {document.getElementById("products")?.scrollIntoView({ behavior: "smooth",});
+       }}
+       >
+       Shop Now →
+       </button>
         </div>
 
         <div className="hero-image">
@@ -62,7 +65,7 @@ function Catalog() {
 
       {/* Title */}
 
-      <h1 className="catalog-title">
+      <h1  id="products" className="catalog-title">
         Featured Products
       </h1>
 
