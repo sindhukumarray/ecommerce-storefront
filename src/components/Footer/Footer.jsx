@@ -66,15 +66,41 @@ function Footer() {
 
           <div className="social-icons">
 
-            <FaFacebookF />
+  <a
+    href="https://www.facebook.com/share/1Eqt5CALpA/"
+    target="_blank"
+    rel="noreferrer"
+  >
+    <FaFacebookF />
+  </a>
 
-            <FaInstagram />
+  <a
+    href="https://www.instagram.com/sanatani_er_sindhu?igsh=M292NTVtZ2JjaTdi"
+    target="_blank"
+    rel="noreferrer"
+  >
+    <FaInstagram />
+  </a>
 
-            <FaLinkedinIn />
+  <a
+    href="https://www.linkedin.com/in/sindhu-kumar-ray-456b8a392"
+    target="_blank"
+    rel="noreferrer"
+  >
+    <FaLinkedinIn />
+  </a>
 
-            <FaGithub />
+  <a
+    href="https://github.com/sindhukumarray"
+    target="_blank"
+    rel="noreferrer"
+  >
+    <FaGithub />
+  </a>
 
-          </div>
+</div>
+
+          
         </div>
 
       </div>
