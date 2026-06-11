@@ -1,5 +1,8 @@
 import { useEffect } from "react";
-import { useDispatch, useSelector,} from "react-redux";
+import {
+  useDispatch,
+  useSelector,
+} from "react-redux";
 
 import ProductCard from "../components/ProductCard/ProductCard";
 import Filters from "../components/Filters/Filters";
@@ -25,34 +28,65 @@ function Catalog() {
       );
   }, [dispatch]);
 
-return (
-  <div>
+  return (
+    <div>
 
-    <div className="hero">
-      <h1>Welcome to Our Store</h1>
-      <p>Discover Premium Products
-    at Amazing Products</p>
+      {/* Hero Section */}
+
+      <div className="hero">
+        <div className="hero-content">
+          <span className="offer-badge">
+            🔥 Summer Sale 50% OFF
+          </span>
+
+          <h1>
+            Discover Amazing Products
+          </h1>
+
+          <p>
+            Shop Electronics,
+            Fashion, Accessories
+            and much more at
+            unbeatable prices.
+          </p>
+
+          <button className="hero-btn">
+            Shop Now →
+          </button>
+        </div>
+
+        <div className="hero-image">
+          <div className="circle"></div>
+        </div>
+      </div>
+
+      {/* Title */}
+
+      <h1 className="catalog-title">
+        Featured Products
+      </h1>
+
+      {/* Filters */}
+
+      <Filters />
+
+      {/* Products */}
+
+      <div className="product-grid">
+        {products.map((product) => (
+          <ProductCard
+            key={product.id}
+            product={product}
+          />
+        ))}
+      </div>
+
+      {/* Recently Viewed */}
+
+      <RecentlyViewed />
+
     </div>
-
-    <h1 className="catalog-title">
-       Shop Now
-    </h1>
-
-    <Filters />
-
-    <RecentlyViewed />
-
-    <div className="product-grid">
-      {products.map((product) => (
-        <ProductCard
-          key={product.id}
-          product={product}
-        />
-      ))}
-    </div>
-
-  </div>
-);
+  );
 }
 
 export default Catalog;

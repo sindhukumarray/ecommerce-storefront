@@ -2,21 +2,34 @@ import { useSelector } from "react-redux";
 
 function RecentlyViewed() {
   const items = useSelector(
-    (state) =>
-      state.recentlyViewed.items
+    (state) => state.recentlyViewed.items
   );
 
+  if (items.length === 0) return null;
+
   return (
-    <div>
+    <div className="recently-viewed">
       <h2>
         Recently Viewed Products
       </h2>
 
-      {items.map((item) => (
-        <p key={item.id}>
-          {item.name}
-        </p>
-      ))}
+      <div className="product-grid">
+        {items.map((item) => (
+          <div
+            key={item.id}
+            className="product-card"
+          >
+            <img
+              src={item.image}
+              alt={item.title}
+            />
+
+            <h3>{item.title}</h3>
+
+            <p>${item.price}</p>
+          </div>
+        ))}
+      </div>
     </div>
   );
 }
