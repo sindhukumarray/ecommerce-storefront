@@ -4,7 +4,8 @@ function Footer() {
       <h3>E-Commerce Store</h3>
 
       <p>
-        Built with React & Redux Toolkit
+        Built with React, Redux Toolkit
+        and FakeStore API
       </p>
 
       <p>

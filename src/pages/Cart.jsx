@@ -28,77 +28,99 @@ function Cart() {
   }, [items]);
 
   return (
-    <div style={{ padding: "20px" }}>
-      <h1>Your Cart</h1>
+    <div className="cart-container">
+      <h1>🛒 Shopping Cart</h1>
 
       {items.length === 0 ? (
-        <h3>Cart is Empty</h3>
+        <div className="empty-cart">
+          <h2>Your Cart Is Empty</h2>
+
+          <Link to="/">
+            <button>
+              Continue Shopping
+            </button>
+          </Link>
+        </div>
       ) : (
-        items.map((item) => (
-          <div
-            key={item.id}
-            style={{
-              border: "1px solid #ddd",
-              marginBottom: "10px",
-              padding: "10px",
-            }}
-          >
-            <h3>{item.title}</h3>
-
-            <p>${item.price}</p>
-
-            <button
-              onClick={() =>
-                dispatch(
-                  decreaseQuantity(item.id)
-                )
-              }
+        <>
+          {items.map((item) => (
+            <div
+              key={item.id}
+              className="cart-item"
             >
-              -
-            </button>
+              <img
+                src={item.image}
+                alt={item.title}
+                className="cart-image"
+              />
 
-            <span
-              style={{
-                margin: "0 10px",
-              }}
-            >
-              {item.quantity}
-            </span>
+              <div className="cart-details">
+                <h3>{item.title}</h3>
 
-            <button
-              onClick={() =>
-                dispatch(
-                  increaseQuantity(item.id)
-                )
-              }
-            >
-              +
-            </button>
+                <p>
+                  Price:
+                  ${item.price}
+                </p>
 
-            <br />
-            <br />
+                <div className="quantity-controls">
+                  <button
+                    onClick={() =>
+                      dispatch(
+                        decreaseQuantity(
+                          item.id
+                        )
+                      )
+                    }
+                  >
+                    -
+                  </button>
 
-            <button
-              onClick={() =>
-                dispatch(
-                  removeFromCart(item.id)
-                )
-              }
-            >
-              Remove
-            </button>
+                  <span>
+                    {item.quantity}
+                  </span>
+
+                  <button
+                    onClick={() =>
+                      dispatch(
+                        increaseQuantity(
+                          item.id
+                        )
+                      )
+                    }
+                  >
+                    +
+                  </button>
+                </div>
+
+                <button
+                  className="remove-btn"
+                  onClick={() =>
+                    dispatch(
+                      removeFromCart(
+                        item.id
+                      )
+                    )
+                  }
+                >
+                  Remove
+                </button>
+              </div>
+            </div>
+          ))}
+
+          <div className="cart-summary">
+            <h2>
+              Total:
+              ${total.toFixed(2)}
+            </h2>
+
+            <Link to="/checkout">
+              <button className="checkout-btn">
+                Proceed To Checkout
+              </button>
+            </Link>
           </div>
-        ))
-      )}
-
-      <h2>Total: ${total.toFixed(2)}</h2>
-
-      {items.length > 0 && (
-        <Link to="/checkout">
-          <button>
-            Proceed To Checkout
-          </button>
-        </Link>
+        </>
       )}
     </div>
   );
