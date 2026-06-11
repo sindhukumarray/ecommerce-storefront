@@ -1,4 +1,4 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import {
   useDispatch,
   useSelector,
@@ -7,11 +7,15 @@ import {
 import ProductCard from "../components/ProductCard/ProductCard";
 import Filters from "../components/Filters/Filters";
 import RecentlyViewed from "../components/RecentlyViewed";
+import Loader from "../components/Loader/Loader";
 
 import { setProducts } from "../features/products/productsSlice";
 
 function Catalog() {
   const dispatch = useDispatch();
+
+  const [loading, setLoading] =
+    useState(true);
 
   const products = useSelector(
     (state) => state.products.filteredProducts
@@ -25,8 +29,15 @@ function Catalog() {
       })
       .catch((error) =>
         console.log(error)
+      )
+      .finally(() =>
+        setLoading(false)
       );
   }, [dispatch]);
+
+  if (loading) {
+    return <Loader />;
+  }
 
   return (
     <div>
@@ -51,11 +62,17 @@ function Catalog() {
           </p>
 
           <button
-             className="hero-btn"onClick={() => {document.getElementById("products")?.scrollIntoView({ behavior: "smooth",});
-       }}
-       >
-       Shop Now →
-       </button>
+            className="hero-btn"
+            onClick={() => {
+              document
+                .getElementById("products")
+                ?.scrollIntoView({
+                  behavior: "smooth",
+                });
+            }}
+          >
+            Shop Now →
+          </button>
         </div>
 
         <div className="hero-image">
@@ -65,7 +82,10 @@ function Catalog() {
 
       {/* Title */}
 
-      <h1  id="products" className="catalog-title">
+      <h1
+        id="products"
+        className="catalog-title"
+      >
         Featured Products
       </h1>
 

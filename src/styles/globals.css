@@ -561,3 +561,45 @@ h2 {
 
   padding: 60px;
 }
+
+
+/* loader */
+.loader {
+  display: flex;
+
+  flex-direction: column;
+
+  justify-content: center;
+
+  align-items: center;
+
+  height: 60vh;
+}
+
+.spinner {
+  width: 60px;
+
+  height: 60px;
+
+  border: 6px solid #ddd;
+
+  border-top: 6px solid #2563eb;
+
+  border-radius: 50%;
+
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.loader p {
+  margin-top: 15px;
+
+  font-size: 18px;
+
+  font-weight: 600;
+}

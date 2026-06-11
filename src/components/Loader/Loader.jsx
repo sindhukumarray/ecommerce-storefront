@@ -1,7 +1,9 @@
 function Loader() {
   return (
     <div className="loader">
-      Loading Products...
+      <div className="spinner"></div>
+
+      <p>Loading Products...</p>
     </div>
   );
 }
