@@ -1,7 +1,13 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-const ProductCard = ({ product }) => {
+import { useDispatch } from "react-redux";
+
+import { addToCart } from "../../features/cart/cartSlice";
+
+function ProductCard({ product }) {
+  const dispatch = useDispatch();
+
   return (
     <div className="product-card">
       <img
@@ -13,6 +19,16 @@ const ProductCard = ({ product }) => {
 
       <p>${product.price}</p>
 
+      <button
+        onClick={() =>
+          dispatch(addToCart(product))
+        }
+      >
+        Add To Cart
+      </button>
+
+      <br />
+
       <Link to={`/product/${product.id}`}>
         <button>
           View Details
@@ -20,6 +36,6 @@ const ProductCard = ({ product }) => {
       </Link>
     </div>
   );
-};
+}
 
 export default ProductCard;
