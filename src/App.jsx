@@ -15,6 +15,7 @@ import Catalog from "./pages/Catalog";
 import ProductDetail from "./pages/ProductDetail";
 import Cart from "./pages/Cart";
 import Wishlist from "./pages/Wishlist";
+import Footer from "./components/Footer/Footer";
 
 const Checkout = lazy(() =>
   import("./pages/Checkout")
@@ -55,6 +56,7 @@ function App() {
           />
         </Routes>
       </Suspense>
+        <Footer />
     </BrowserRouter>
   );
 }

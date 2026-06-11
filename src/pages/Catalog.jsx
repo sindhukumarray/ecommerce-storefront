@@ -1,8 +1,5 @@
 import { useEffect } from "react";
-import {
-  useDispatch,
-  useSelector,
-} from "react-redux";
+import { useDispatch, useSelector,} from "react-redux";
 
 import ProductCard from "../components/ProductCard/ProductCard";
 import Filters from "../components/Filters/Filters";
@@ -28,26 +25,33 @@ function Catalog() {
       );
   }, [dispatch]);
 
-  return (
-    <div>
-      <h1 className="catalog-title">
-        Product Catalog
-      </h1>
+return (
+  <div>
 
-      <Filters />
-
-      <RecentlyViewed />
-
-      <div className="product-grid">
-        {products.map((product) => (
-          <ProductCard
-            key={product.id}
-            product={product}
-          />
-        ))}
-      </div>
+    <div className="hero">
+      <h1>Welcome to Our Store</h1>
+      <p>Discover Amazing Products</p>
     </div>
-  );
+
+    <h1 className="catalog-title">
+      Product Catalog
+    </h1>
+
+    <Filters />
+
+    <RecentlyViewed />
+
+    <div className="product-grid">
+      {products.map((product) => (
+        <ProductCard
+          key={product.id}
+          product={product}
+        />
+      ))}
+    </div>
+
+  </div>
+);
 }
 
 export default Catalog;
