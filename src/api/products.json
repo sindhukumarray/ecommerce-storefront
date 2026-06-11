@@ -8,8 +8,8 @@
   },
   {
     "id": 2,
-    "name": "Gaming Mouse",
-    "price": 59,
+    "name": "Samsung TV",
+    "price": 799,
     "category": "Electronics",
     "image": "https://via.placeholder.com/250"
   },
@@ -22,9 +22,9 @@
   },
   {
     "id": 4,
-    "name": "Laptop",
-    "price": 850,
-    "category": "Electronics",
+    "name": "T-Shirt",
+    "price": 40,
+    "category": "Fashion",
     "image": "https://via.placeholder.com/250"
   }
 ]

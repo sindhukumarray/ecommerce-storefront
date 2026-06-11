@@ -8,8 +8,54 @@ const initialState = {
 
 const productsSlice = createSlice({
   name: "products",
+
   initialState,
-  reducers: {},
+
+  reducers: {
+    searchProducts: (state, action) => {
+      state.filteredProducts =
+        state.products.filter((product) =>
+          product.name
+            .toLowerCase()
+            .includes(
+              action.payload.toLowerCase()
+            )
+        );
+    },
+
+    filterByCategory: (
+      state,
+      action
+    ) => {
+      state.filteredProducts =
+        state.products.filter(
+          (product) =>
+            product.category ===
+            action.payload
+        );
+    },
+
+    filterByPrice: (state, action) => {
+      state.filteredProducts =
+        state.products.filter(
+          (product) =>
+            product.price <=
+            action.payload
+        );
+    },
+
+    resetFilters: (state) => {
+      state.filteredProducts =
+        state.products;
+    },
+  },
 });
+
+export const {
+  searchProducts,
+  filterByCategory,
+  filterByPrice,
+  resetFilters,
+} = productsSlice.actions;
 
 export default productsSlice.reducer;

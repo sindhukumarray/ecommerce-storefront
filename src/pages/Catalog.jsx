@@ -2,21 +2,21 @@ import { useSelector } from "react-redux";
 
 import ProductCard from "../components/ProductCard/ProductCard";
 
+import Filters from "../components/Filters/Filters";
+
 function Catalog() {
   const products = useSelector(
-    (state) => state.products.filteredProducts
+    (state) =>
+      state.products.filteredProducts
   );
 
   return (
     <div>
-      <h1
-        style={{
-          textAlign: "center",
-          marginTop: "20px",
-        }}
-      >
+      <h1 className="catalog-title">
         Product Catalog
       </h1>
+
+      <Filters />
 
       <div className="product-grid">
         {products.map((product) => (
