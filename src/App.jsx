@@ -1,7 +1,7 @@
 function App() {
   return (
     <div>
-      <h1>E-Commerce Storefront</h1>
+      <h1>Redux Store Connected ✅</h1>
     </div>
   );
 }
