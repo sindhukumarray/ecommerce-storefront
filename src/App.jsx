@@ -10,6 +10,7 @@ import Cart from "./pages/Cart";
 import Wishlist from "./pages/Wishlist";
 import Footer from "./components/Footer/Footer";
 import NotFound from "./pages/NotFound";
+import BackToTop from "./components/BackToTop/BackToTop";
 
 const Checkout = lazy(() =>
   import("./pages/Checkout")
@@ -59,6 +60,9 @@ function App() {
           />
         </Routes>
       </Suspense>
+
+      <BackToTop />
+      
         <Footer />
     </BrowserRouter>
   );
