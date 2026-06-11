@@ -7,6 +7,7 @@ const initialState = {
 const wishlistSlice = createSlice({
   name: "wishlist",
   initialState,
+
   reducers: {
     addToWishlist: (state, action) => {
       const exists = state.items.find(

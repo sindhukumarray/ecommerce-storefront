@@ -1,9 +1,14 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import { FaHeart } from "react-icons/fa";
 
 import { useDispatch } from "react-redux";
 
 import { addToCart } from "../../features/cart/cartSlice";
+
+import {
+  addToWishlist,
+} from "../../features/wishlist/wishlistSlice";
 
 function ProductCard({ product }) {
   const dispatch = useDispatch();
@@ -27,6 +32,15 @@ function ProductCard({ product }) {
         Add To Cart
       </button>
 
+      <button
+        onClick={() =>
+          dispatch(addToWishlist(product))
+        }
+      >
+        <FaHeart />
+      </button>
+
+      <br />
       <br />
 
       <Link to={`/product/${product.id}`}>
