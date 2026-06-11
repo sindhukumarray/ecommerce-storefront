@@ -1,14 +1,7 @@
-import React, {
-  lazy,
-  Suspense,
-} from "react";
+import React, {lazy,Suspense,} from "react";
 
-import {
-  BrowserRouter,
-  Routes,
-  Route,
-} from "react-router-dom";
-
+import {BrowserRouter,Routes,Route,} from "react-router-dom";
+import { Toaster } from "react-hot-toast";
 import Navbar from "./components/Navbar/Navbar";
 
 import Catalog from "./pages/Catalog";
@@ -24,6 +17,10 @@ const Checkout = lazy(() =>
 function App() {
   return (
     <BrowserRouter>
+
+    <Toaster
+      position="top-right"
+    />
       <Navbar />
 
       <Suspense

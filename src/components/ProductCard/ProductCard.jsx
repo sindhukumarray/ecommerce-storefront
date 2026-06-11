@@ -7,8 +7,26 @@ import { useDispatch } from "react-redux";
 import { addToCart } from "../../features/cart/cartSlice";
 import { addToWishlist } from "../../features/wishlist/wishlistSlice";
 
+import toast from "react-hot-toast";
+
 function ProductCard({ product }) {
   const dispatch = useDispatch();
+
+  const handleAddToCart = () => {
+    dispatch(addToCart(product));
+
+    toast.success(
+      "Product Added To Cart 🛒"
+    );
+  };
+
+  const handleWishlist = () => {
+    dispatch(addToWishlist(product));
+
+    toast.success(
+      "Added To Wishlist ❤️"
+    );
+  };
 
   return (
     <div className="product-card">
@@ -22,17 +40,13 @@ function ProductCard({ product }) {
       <p>${product.price}</p>
 
       <button
-        onClick={() =>
-          dispatch(addToCart(product))
-        }
+        onClick={handleAddToCart}
       >
         Add To Cart
       </button>
 
       <button
-        onClick={() =>
-          dispatch(addToWishlist(product))
-        }
+        onClick={handleWishlist}
       >
         <FaHeart />
       </button>
