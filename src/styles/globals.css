@@ -710,9 +710,9 @@ h2 {
 }
 
 /*darkmode*/
+
 .theme-btn {
   background: #2563eb;
-
   color: white;
 
   border: none;
@@ -735,14 +735,64 @@ h2 {
   color: white;
 }
 
+/* Navbar */
+
 .dark-theme .navbar {
   background: #020617;
 }
+
+/* Product Cards */
 
 .dark-theme .product-card {
   background: #1e293b;
   color: white;
 }
+
+.dark-theme .product-card h3 {
+  color: white;
+}
+
+.dark-theme .product-card p {
+  color: #22c55e;
+}
+
+/* Wishlist */
+
+.dark-theme .wishlist-card {
+  background: #1e293b;
+  color: white;
+}
+
+.dark-theme .wishlist-card h3 {
+  color: white;
+}
+
+.dark-theme .wishlist-card p {
+  color: #22c55e;
+}
+
+/* Product Detail */
+
+.dark-theme .product-detail {
+  background: #1e293b;
+  color: white;
+}
+
+/* Cart */
+
+.dark-theme .cart-item {
+  background: #1e293b;
+  color: white;
+}
+
+/* Checkout */
+
+.dark-theme .checkout-container {
+  background: #1e293b;
+  color: white;
+}
+
+/* Filters */
 
 .dark-theme .filters input,
 .dark-theme .filters select {
@@ -751,37 +801,26 @@ h2 {
   border: 1px solid #475569;
 }
 
-/*notfound page */
-.not-found {
-  text-align: center;
+/* Reviews */
 
-  padding: 100px 20px;
-}
-
-.not-found h1 {
-  font-size: 120px;
-
-  color: #2563eb;
-}
-
-.not-found h2 {
-  margin-bottom: 20px;
-}
-
-.not-found button {
-  margin-top: 20px;
-
-  padding: 12px 20px;
-
-  background: #2563eb;
-
+.dark-theme .review-card {
+  background: #334155;
   color: white;
+}
 
-  border: none;
+/* Footer */
 
-  border-radius: 8px;
+.dark-theme .footer {
+  background: #020617;
+}
 
-  cursor: pointer;
+/* Titles */
+
+.dark-theme h1,
+.dark-theme h2,
+.dark-theme h3,
+.dark-theme h4 {
+  color: white;
 }
 
 /*backtotop*/
